@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.martin.views.VentanaAltaController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu id="menuAltaPartido" mnemonicParsing="false" text="AltaPartido">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New" />
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <Menu mnemonicParsing="false" text="Open Recent" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" text="Save As…" />
+            <MenuItem mnemonicParsing="false" text="Revert" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <children>
+            <Label id="lbVisitante" layoutX="27.0" layoutY="83.0" text="Equipo Visitante" />
+            <Label id="lbResultado" layoutX="27.0" layoutY="135.0" text="Resultado" />
+            <Label id="lbLocal" layoutX="27.0" layoutY="27.0" text="Equipo Local" />
+            <Label id="lbDivision" layoutX="28.0" layoutY="192.0" text="Division" />
+            <Label id="lbFecha" layoutX="33.0" layoutY="258.0" text="Fecha" />
+            <ComboBox fx:id="cbDivision" layoutX="184.0" layoutY="188.0" prefWidth="150.0" promptText="Division" />
+            <TextField fx:id="tfLocal" layoutX="184.0" layoutY="23.0" />
+            <TextField fx:id="tfVisitante" layoutX="184.0" layoutY="79.0" />
+            <TextField fx:id="tfResultado" layoutX="184.0" layoutY="131.0" />
+            <DatePicker fx:id="dpFecha" layoutX="184.0" layoutY="254.0" />
+            <Button id="btnAceptar" fx:id="btnAceptar" layoutX="184.0" layoutY="315.0" mnemonicParsing="false" text="Aceptar" />
+            <Button id="btnCancelar" fx:id="btnCancelar" layoutX="308.0" layoutY="315.0" mnemonicParsing="false" text="Cancelar" />
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
