@@ -1,5 +1,6 @@
 package com.martin.views;
 import com.martin.logica.Logica;
+import com.martin.models.Division;
 import com.martin.models.Partido;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,13 +13,17 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 public class VentanaAltaController {
 
         private Partido partidoModificar;
+        private int indiceModificar;
         @FXML
-        private ComboBox<?> cbDivision;
+        private ComboBox<Division> cbDivision;
 
         @FXML
         private TextField tfLocal;
@@ -39,18 +44,40 @@ public class VentanaAltaController {
         private Button btnCancelar;
 
          @FXML
-        void altaPartido(ActionEvent event){
-                 if ()
-            int id = 0;
-            Partido partido = new Partido(id, tfLocal.getText(), tfVisitante.getText(), null, tfResultado.getText(), null);
-            Logica.getInstance().addPartido(partido);//esto esta en metodo void altaPersona
-            Stage stage = ((Stage)((Node)event.getSource()).getScene().getWindow());
-            stage.close();
+        void altaModificarPartido(ActionEvent event){
+                 if (partidoModificar!=null) {//si se le da al boton modificar
+                     partidoModificar.setEquipoLocal(tfLocal.getText());
+                     partidoModificar.setEquipoVisitante(tfVisitante.getText());
+                     partidoModificar.setResultado(tfResultado.getText());
+                     partidoModificar.setD((Division) cbDivision.getValue());
+                     partidoModificar.setFecha(dpFecha.getValue());
+
+                     Logica.getInstance().modificarPartido(partidoModificar, indiceModificar);
+
+                 }
+                 else{//sino el alta normal de un partido
+                     int id = 0;
+                     LocalDate localDate = (LocalDate) dpFecha.getValue();
+                     Date date = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+                     Partido partido = new Partido(id, tfLocal.getText(), tfVisitante.getText(), (Division)cbDivision.getValue(), tfResultado.getText(), date);
+                     Logica.getInstance().addPartido(partido);//esto esta en metodo void altaPersona
+                 }
+
+             Stage stage = ((Stage) ((Node) event.getSource()).getScene().getWindow());//obtener stage desde evento
+             stage.close();
     }
-    public void setPartidoModificar(Partido partido){
+    public void setPartidoModificar(Partido partidoModificar, int indiceModificar){
                  this.partidoModificar = partidoModificar;
-                 tfLocal.setText(partido.getEquipoLocal());
-                 tfVisitante.setText(partido.getEquipoVisitante());
+                 this.indiceModificar = indiceModificar;
+                 tfLocal.setText(partidoModificar.getEquipoLocal());
+                 tfVisitante.setText(partidoModificar.getEquipoVisitante());
+                 cbDivision.setValue(partidoModificar.getD());
+                 tfResultado.setText(partidoModificar.getResultado());
+                 LocalDate ld = partidoModificar.getFecha();
+                 Date date =
+                 LocalDate localDate = (LocalDate) dpFecha.getValue();
+                 date = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+                 dpFecha.setValue(LocalDate.parse(partidoModificar.getFecha()));
 
     }
 }

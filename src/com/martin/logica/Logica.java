@@ -5,10 +5,16 @@ import com.martin.models.Partido;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.io.*;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 
 public class Logica {
-    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+    private ObservableList<Partido> partidos = FXCollections.observableArrayList();
+    private ArrayList<Partido> partidos1 = new ArrayList<>();
+    private ArrayList<Partido> partidos2 = new ArrayList<Partido>();
+    private ObjectInputStream lectura;
+    private ObjectOutputStream escritura;
     private static Logica INSTANCE = null;
 
     private Logica() {
@@ -24,8 +30,6 @@ public class Logica {
 
         return INSTANCE;
     }
-
-    private ObservableList<Partido> partidos = FXCollections.observableArrayList();
 
     public void addPartido(Partido partido) {
         partidos.add(partido);
@@ -53,6 +57,56 @@ public class Logica {
         }
         else {
             return partidos;
+        }
+    }
+    public void escribirObjetos(File fichero){
+
+        try {
+            for (Partido p:partidos) {
+                partidos1.add(p);
+            }
+            escritura = new ObjectOutputStream(new FileOutputStream(fichero));
+            escritura.writeObject(partidos1);
+        }catch(FileNotFoundException e){
+            e.getMessage();
+            System.out.println("Error. No se encuentra el fichero");
+        }catch(IOException e){
+            e.getMessage();
+        }finally {
+            try{
+                if(escritura!=null){
+                    escritura.close();
+                }
+            }catch (IOException e){
+                System.out.println("Error al cerrar el fichero para escritura");
+            }
+        }
+    }
+    public void leerObjetos(File fichero){
+        try {
+            lectura = new ObjectInputStream(new FileInputStream(fichero));
+            partidos2 = (ArrayList<Partido>) lectura.readObject();
+            for (Partido p:partidos2) {
+                partidos.add(p);
+            }
+        }catch(FileNotFoundException e){
+            System.out.println("No se ha encontrado el fichero para leer");
+            e.getLocalizedMessage();
+        }catch(IOException e){
+            e.getMessage();
+            System.out.println("Error de entrada/salida");
+        }catch(ClassNotFoundException e){
+            System.out.println("No se ha encontrado la clase");
+            e.getLocalizedMessage();
+        }finally {
+            try{
+                if(lectura != null){
+                    lectura.close();
+                }
+            }catch(IOException e){
+                e.getMessage();
+                System.out.println("Error al cerrar el fichero");
+            }
         }
     }
 }

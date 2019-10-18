@@ -1,4 +1,4 @@
 package com.martin.models;
 
-public enum Division {PRIMERA, SEGUNDA, TERCERA
+public enum Division {TODO, PRIMERA, SEGUNDA, TERCERA
 }

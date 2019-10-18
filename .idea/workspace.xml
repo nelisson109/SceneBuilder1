@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dfc50e74-0105-47b4-8be8-005097889272" name="Default Changelist" comment="" />
+    <list default="true" id="dfc50e74-0105-47b4-8be8-005097889272" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/martin/views/AltaPartido.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/martin/views/PantallaPrincipal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unidad2javaFXejemplo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Unidad2javaFXejemplo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/martin/logica/Logica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/martin/logica/Logica.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/martin/models/Division.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/martin/models/Division.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/martin/models/Partido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/martin/models/Partido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/martin/views/MainActivityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/martin/views/MainActivityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/martin/views/VentanaAltaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/martin/views/VentanaAltaController.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +37,13 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../REPO_MARTIN" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.martin.views" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">

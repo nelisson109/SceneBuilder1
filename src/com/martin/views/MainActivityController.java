@@ -32,19 +32,29 @@ public class MainActivityController implements Initializable {//un controller si
             Parent root = fxmlLoader.load();
 
             Stage stage = new Stage();
-            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.initModality(Modality.WINDOW_MODAL);
             stage.setTitle("Alta partido");
             stage.setScene(new Scene(root, 700, 775));
             stage.show();
         }catch(IOException e){
-            e.getLocalizedMessage();
+            e.printStackTrace();
         }
 
     }
     void modificarPartido(ActionEvent event){
-        VentanaAltaController controller = fxmlLoader.getController();
-        Partido partido = tvpartidos.getSelectionModel().getSelectedItem();
-        controller.setPartidoModificar(partido);
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("VentanaAlta.fxml"));
+            Parent root = fxmlLoader.load();
+            VentanaAltaController controller = fxmlLoader.getController();
+            Partido partido = tvpartidos.getSelectionModel().getSelectedItem();
+            controller.setPartidoModificar(partido, tvpartidos.getSelectionModel().getSelectedIndex());
+            Stage stage = new Stage();
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.setScene(new Scene(root, 300, 275));
+            stage.show();
+        }catch(IOException e){
+            e.printStackTrace();
+        }
 
     }
 
