@@ -1,4 +1,5 @@
 package com.martin.views;
+import com.martin.Utils.Utils;
 import com.martin.logica.Logica;
 import com.martin.models.Division;
 import com.martin.models.Partido;
@@ -50,7 +51,7 @@ public class VentanaAltaController {
                      partidoModificar.setEquipoVisitante(tfVisitante.getText());
                      partidoModificar.setResultado(tfResultado.getText());
                      partidoModificar.setD((Division) cbDivision.getValue());
-                     partidoModificar.setFecha(dpFecha.getValue());
+                     LocalDate localDate = Utils.convertToLocalDate(partidoModificar.getFecha());
 
                      Logica.getInstance().modificarPartido(partidoModificar, indiceModificar);
 
@@ -73,11 +74,9 @@ public class VentanaAltaController {
                  tfVisitante.setText(partidoModificar.getEquipoVisitante());
                  cbDivision.setValue(partidoModificar.getD());
                  tfResultado.setText(partidoModificar.getResultado());
-                 LocalDate ld = partidoModificar.getFecha();
-                 Date date =
-                 LocalDate localDate = (LocalDate) dpFecha.getValue();
-                 date = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
-                 dpFecha.setValue(LocalDate.parse(partidoModificar.getFecha()));
+                LocalDate localDate = Utils.convertToLocalDate(partidoModificar.getFecha());
+                dpFecha.setValue(localDate);
+
 
     }
 }

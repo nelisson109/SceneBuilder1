@@ -51,7 +51,8 @@ public class MainActivityController implements Initializable {//un controller si
             Stage stage = new Stage();
             stage.initModality(Modality.WINDOW_MODAL);
             stage.setScene(new Scene(root, 300, 275));
-            stage.show();
+            stage.showAndWait();
+            tvpartidos.setItems(divisionFiltrar.filtrar(divisionFiltrar.getText()));
         }catch(IOException e){
             e.printStackTrace();
         }

@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dfc50e74-0105-47b4-8be8-005097889272" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/martin/views/AltaPartido.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/martin/views/PantallaPrincipal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/martin/views/Filters/FilterDivision.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unidad2javaFXejemplo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Unidad2javaFXejemplo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/martin/logica/Logica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/martin/logica/Logica.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/martin/models/Division.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/martin/models/Division.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/martin/models/Partido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/martin/models/Partido.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/martin/views/MainActivityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/martin/views/MainActivityController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/martin/views/VentanaAltaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/martin/views/VentanaAltaController.java" afterDir="false" />
     </list>
@@ -42,6 +36,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.martin.Utils" />
       <recent name="com.martin.views" />
     </key>
   </component>
