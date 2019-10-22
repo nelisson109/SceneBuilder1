@@ -53,21 +53,20 @@ public class VentanaAltaController {
                      partidoModificar.setD((Division) cbDivision.getValue());
                      LocalDate localDate = Utils.convertToLocalDate(partidoModificar.getFecha());
 
-                     Logica.getInstance().modificarPartido(partidoModificar, indiceModificar);
+                     Logica.getInstance().modificarPartido(partidoModificar);
 
                  }
                  else{//sino el alta normal de un partido
-                     int id = 0;
                      LocalDate localDate = (LocalDate) dpFecha.getValue();
                      Date date = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
-                     Partido partido = new Partido(id, tfLocal.getText(), tfVisitante.getText(), (Division)cbDivision.getValue(), tfResultado.getText(), date);
-                     Logica.getInstance().addPartido(partido);//esto esta en metodo void altaPersona
+                     Partido partido = new Partido(tfLocal.getText(), tfVisitante.getText(), (Division)cbDivision.getValue(), tfResultado.getText(), date);
+                     Logica.getInstance().addPartido(partido);
                  }
 
              Stage stage = ((Stage) ((Node) event.getSource()).getScene().getWindow());//obtener stage desde evento
              stage.close();
     }
-    public void setPartidoModificar(Partido partidoModificar, int indiceModificar){
+    public void setPartidoModificar(Partido partidoModificar){
                  this.partidoModificar = partidoModificar;
                  this.indiceModificar = indiceModificar;
                  tfLocal.setText(partidoModificar.getEquipoLocal());

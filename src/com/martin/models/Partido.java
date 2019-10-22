@@ -6,20 +6,18 @@ import java.util.*;
 
 
 public class Partido implements Comparable<Partido>, Serializable {
-    private int id;
+    
     private String equipoLocal;
     private String equipoVisitante;
     private Division d;
     private String resultado;
     private Date fecha;
 
-    public Partido(int id, String equipoLocal, String equipoVisitante, Division d, String resultado, Date fecha) {
-        this.id = id;
+    public Partido(String equipoLocal, String equipoVisitante, Division d, String resultado, Date fecha) {
+
         this.equipoLocal = equipoLocal;
         this.equipoVisitante = equipoVisitante;
         this.d = d;
-   /*     this.resultadoLocal = resultadoLocal;
-        this.resultadoVisitante = resultadoVisitante;   */
         this.resultado = resultado;
         this.fecha = fecha;
     }
@@ -32,8 +30,7 @@ public class Partido implements Comparable<Partido>, Serializable {
     @Override
     public String toString() {
         return "Partido{" +
-                "id=" + id +
-                ", equipoLocal='" + equipoLocal + '\'' +
+                "equipoLocal='" + equipoLocal + '\'' +
                 ", equipoVisitante='" + equipoVisitante + '\'' +
                 ", d=" + d +
                 ", resultado='" + resultado + '\'' +
@@ -41,13 +38,6 @@ public class Partido implements Comparable<Partido>, Serializable {
                 '}';
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getEquipoLocal() {
         return equipoLocal;
@@ -64,14 +54,7 @@ public class Partido implements Comparable<Partido>, Serializable {
     public void setEquipoVisitante(String equipoVisitante) {
         this.equipoVisitante = equipoVisitante;
     }
-/*
-    public String getD() {
-        return String.valueOf(d);
-    }
-    public void setD(Division d) {
-        this.d = d;
-    }
-*/
+
 
     public Division getD() {
         return d;

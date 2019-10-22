@@ -6,6 +6,7 @@ module Unidad2javaFXejemplo {
     exports com.martin.logica;
     exports com.martin.models;
     exports com.martin.views;
+    exports com.martin.Utils;
 
     opens com.martin.views to javafx.fxml;
 }

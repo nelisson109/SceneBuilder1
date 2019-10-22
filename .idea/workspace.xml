@@ -2,10 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dfc50e74-0105-47b4-8be8-005097889272" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/martin/views/Filters/FilterDivision.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/martin/Utils/Utils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/com/martin/Launcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/com/martin/Launcher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/com/martin/logica/Logica.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/com/martin/logica/Logica.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/com/martin/models/Division.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/com/martin/models/Division.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/com/martin/models/Partido.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/com/martin/models/Partido.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/com/martin/views/BaseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/com/martin/views/BaseController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/com/martin/views/MainActivityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/com/martin/views/MainActivityController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/com/martin/views/VentanaAltaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/com/martin/views/VentanaAltaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/martin/logica/Logica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/martin/logica/Logica.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/martin/models/Partido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/martin/models/Partido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/martin/views/AltaPartido.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/martin/views/Filters/FilterDivision.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/martin/views/Filters/FilterDivision.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/martin/views/MainActivityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/martin/views/MainActivityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/martin/views/PantallaPrincipal.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/martin/views/VentanaAltaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/martin/views/VentanaAltaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/module-info.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

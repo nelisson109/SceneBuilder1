@@ -6,15 +6,26 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class FilterDivision {
-    private ObservableList<Division> listaPartidos;
-    private ObservableList<Division> listaFiltrada;
+    private ObservableList<Partido> listaPartidos;
+    private ObservableList<Partido> listaFiltrada;
 
-    public FilterDivision(ObservableList<Division> listaPartidos){
+    public FilterDivision(ObservableList<Partido> listaPartidos){
         this.listaPartidos = listaPartidos;
         listaFiltrada = FXCollections.observableArrayList();
 
     }
-    public void filtrar(Division divisionFiltrar){
-        if ()
+    public ObservableList<Partido> filtrar(ObservableList<Division> divisionFiltrar){
+        if(divisionFiltrar!=null && !"".equals(divisionFiltrar)){
+            listaFiltrada.clear();
+            for(Partido partido : listaPartidos){
+                if(partido.getD().equals(divisionFiltrar)){
+                    listaFiltrada.add(partido);
+                }
+            }
+            return listaFiltrada;
+        }else{
+            return listaPartidos;
+        }
     }
+
 }
