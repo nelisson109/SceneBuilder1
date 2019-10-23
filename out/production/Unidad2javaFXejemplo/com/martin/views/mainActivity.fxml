@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
@@ -50,9 +51,10 @@
       <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
             <Button id="btnAñadir" fx:id="brnAñadir" mnemonicParsing="false" onAction="#AltaPartido" text="Añadir" />
-            <Button id="btnBorrar" fx:id="btnBorrar" mnemonicParsing="false" text="Borrar" />
-            <Button id="btnModificar" fx:id="btnModificar" mnemonicParsing="false" text="Modificar" />
+            <Button id="btnBorrar" fx:id="btnBorrar" mnemonicParsing="false" onAction="#borrarPartido" text="Borrar" />
+            <Button id="btnModificar" fx:id="btnModificar" mnemonicParsing="false" onAction="#modificarPartido" text="Modificar" />
             <Button id="btnGuardar" fx:id="btnGuardar" mnemonicParsing="false" text="Guardar" />
+            <ComboBox fx:id="cbFiltrar" prefWidth="150.0" />
          </children>
       </HBox>
   </children>

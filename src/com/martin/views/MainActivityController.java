@@ -9,6 +9,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -36,7 +37,7 @@ public class MainActivityController implements Initializable {//un controller si
     private TableView<Partido> tvpartidos;
 
     @FXML
-    void AltaPartido(ActionEvent event) {
+    void AltaPartido(ActionEvent event) {//debemos abrir la ventana para el alta
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("VentanaAlta.fxml"));
             Parent root = fxmlLoader.load();
@@ -51,7 +52,8 @@ public class MainActivityController implements Initializable {//un controller si
         }
 
     }
-    void modificarPartido(ActionEvent event){
+    @FXML
+    void modificarPartido(ActionEvent event){//debemos abrir la ventana para modificar
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("VentanaAlta.fxml"));
             Parent root = fxmlLoader.load();
@@ -66,7 +68,15 @@ public class MainActivityController implements Initializable {//un controller si
         }catch(IOException e){
             e.printStackTrace();
         }
-
+    }
+    @FXML
+    void borrarPartido(ActionEvent event){
+        Partido partido = tvpartidos.getSelectionModel().getSelectedItem();
+        if (partido!=null)
+            Logica.getInstance().borrarPartido(partido);
+    }
+    void guardar(ActionEvent event){
+        //modificar para usar un FileChooser
     }
 
     @Override
@@ -75,13 +85,25 @@ public class MainActivityController implements Initializable {//un controller si
         filterDivision = new FilterDivision(Logica.getInstance().getPartidos());
 
         ObservableList<Division> categorias = FXCollections.observableArrayList();
+        categorias.add(Division.TODO);
         categorias.add(Division.PRIMERA);
         categorias.add(Division.SEGUNDA);
         categorias.add(Division.TERCERA);
-        cbDivision = new ComboBox<Division>(categorias);
+        cbDivision.setItems(FXCollections.observableArrayList(Division.values()));//sin acabar
+//        cbDivision.getSelectionModel().selectFirst();
+
+ /*       cbDivision.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                Division d = (Division) cbDivision.getSelectionModel().getSelectedItem();
+                tvpartidos.setItems(Logica.getInstance().filtrar(d));
+            }
+        });*/
+
         cbDivision.itemsProperty().addListener(new ChangeListener<ObservableList<Division>>() {
             @Override
             public void changed(ObservableValue<? extends ObservableList<Division>> observableValue, ObservableList<Division> oldValue, ObservableList<Division> newValue) {
+                Division d = (Division) cbDivision.getSelectionModel().getSelectedItem();
                 tvpartidos.setItems(filterDivision.filtrar(newValue));
             }
         });
