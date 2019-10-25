@@ -3,6 +3,8 @@ import com.martin.Utils.Utils;
 import com.martin.logica.Logica;
 import com.martin.models.Division;
 import com.martin.models.Partido;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -22,7 +24,8 @@ import java.util.ResourceBundle;
 public class VentanaAltaController {
 
         private Partido partidoModificar;
-        private int indiceModificar;
+        private ObservableList<Division> categorias = FXCollections.observableArrayList();
+
         @FXML
         private ComboBox<Division> cbDivision;
 
@@ -45,37 +48,54 @@ public class VentanaAltaController {
         private Button btnCancelar;
 
          @FXML
-        void altaModificarPartido(ActionEvent event){
-                 if (partidoModificar!=null) {//si se le da al boton modificar
+        void altaModificarPartido(ActionEvent event){//alta nueva o alta modificando
+        /*     ObservableList<Division> categorias = FXCollections.observableArrayList();
+             categorias.add(Division.PRIMERA);
+             categorias.add(Division.SEGUNDA);
+             categorias.add(Division.TERCERA);
+             cbDivision.setItems(FXCollections.observableArrayList(Division.values()));
+             cbDivision.getItems().setAll(Division.values());*/
+             categorias.add(Division.PRIMERA);
+             categorias.add(Division.SEGUNDA);
+             categorias.add(Division.TERCERA);
+             cbDivision.getItems().setAll(Division.values());
+                 if (partidoModificar!=null) {//si estamos modificando
                      partidoModificar.setEquipoLocal(tfLocal.getText());
                      partidoModificar.setEquipoVisitante(tfVisitante.getText());
                      partidoModificar.setResultado(tfResultado.getText());
-                     partidoModificar.setD((Division) cbDivision.getValue());
+
+                     partidoModificar.setD((Division) cbDivision.getSelectionModel().getSelectedItem());
                      LocalDate localDate = Utils.convertToLocalDate(partidoModificar.getFecha());
 
                      Logica.getInstance().modificarPartido(partidoModificar);
 
                  }
-                 else{//sino el alta normal de un partido
+                 else{//si estamos haciendo un alta normal
+
                      LocalDate localDate = (LocalDate) dpFecha.getValue();
                      Date date = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
-                     Partido partido = new Partido(tfLocal.getText(), tfVisitante.getText(), (Division)cbDivision.getValue(), tfResultado.getText(), date);
+                     Partido partido = new Partido(tfLocal.getText(), tfVisitante.getText(), (Division)cbDivision.getSelectionModel().getSelectedItem(), tfResultado.getText(), date);
                      Logica.getInstance().addPartido(partido);
                  }
 
              Stage stage = ((Stage) ((Node) event.getSource()).getScene().getWindow());//obtener stage desde evento
              stage.close();
     }
-    public void setPartidoModificar(Partido partidoModificar){
+    public void setPartidoModificar(Partido partidoModificar){//llamado por modificarPartido
                  this.partidoModificar = partidoModificar;
-                 this.indiceModificar = indiceModificar;
+        categorias.add(Division.PRIMERA);
+        categorias.add(Division.SEGUNDA);
+        categorias.add(Division.TERCERA);
+        cbDivision.getItems().setAll(Division.values());
                  tfLocal.setText(partidoModificar.getEquipoLocal());
                  tfVisitante.setText(partidoModificar.getEquipoVisitante());
                  cbDivision.setValue(partidoModificar.getD());
                  tfResultado.setText(partidoModificar.getResultado());
                 LocalDate localDate = Utils.convertToLocalDate(partidoModificar.getFecha());
                 dpFecha.setValue(localDate);
-
-
+    }
+    public void btnCancelar(ActionEvent event){
+        Stage stage = ((Stage) ((Node) event.getSource()).getScene().getWindow());//obtener stage desde evento
+        stage.close();
     }
 }

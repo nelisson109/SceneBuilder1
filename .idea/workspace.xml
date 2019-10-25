@@ -3,9 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="dfc50e74-0105-47b4-8be8-005097889272" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/com/martin/logica/Logica.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/com/martin/logica/Logica.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/com/martin/views/MainActivityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/com/martin/views/MainActivityController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/com/martin/views/VentanaAlta.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/com/martin/views/VentanaAlta.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/com/martin/views/VentanaAltaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/com/martin/views/VentanaAltaController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/com/martin/views/mainActivity.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/com/martin/views/mainActivity.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/martin/logica/Logica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/martin/logica/Logica.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/martin/views/Filters/FilterDivision.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/martin/views/Filters/FilterDivision.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/martin/views/MainActivityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/martin/views/MainActivityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/martin/views/VentanaAlta.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/martin/views/VentanaAlta.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/martin/views/VentanaAltaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/martin/views/VentanaAltaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/martin/views/mainActivity.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/martin/views/mainActivity.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -13,6 +20,9 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="SceneBuilder1" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -29,7 +39,7 @@
   <component name="ProjectId" id="1SCGpiiBlzPzejCVgdiDtJvEZcQ" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../REPO_MARTIN" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../openjfx/OtherExamples/UD2JavaFXEjemplo" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -91,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571782071407</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="filtrando2">
+      <created>1571868533084</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1571868533084</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -109,6 +126,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="filtrando" />
-    <option name="LAST_COMMIT_MESSAGE" value="filtrando" />
+    <MESSAGE value="filtrando2" />
+    <option name="LAST_COMMIT_MESSAGE" value="filtrando2" />
   </component>
 </project>

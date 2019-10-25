@@ -18,9 +18,6 @@ public class Logica {
     private static Logica INSTANCE = null;
 
     private Logica() {
-        Partido p1 = new Partido("Sporting", "Oviedo", Division.PRIMERA, "3-2", null);
-        Partido p2 = new Partido("Barsa", "Madrid", Division.PRIMERA, "3-0", null);
-        partidos.addAll(p1, p2);
 
     }
 

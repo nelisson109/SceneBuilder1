@@ -46,8 +46,8 @@
             <TextField fx:id="tfVisitante" layoutX="184.0" layoutY="79.0" />
             <TextField fx:id="tfResultado" layoutX="184.0" layoutY="131.0" />
             <DatePicker fx:id="dpFecha" layoutX="184.0" layoutY="254.0" />
-            <Button id="btnAceptar" fx:id="btnAceptar" layoutX="184.0" layoutY="315.0" mnemonicParsing="false" text="Aceptar" />
-            <Button id="btnCancelar" fx:id="btnCancelar" layoutX="308.0" layoutY="315.0" mnemonicParsing="false" text="Cancelar" />
+            <Button id="btnAceptar" fx:id="btnAceptar" layoutX="184.0" layoutY="315.0" mnemonicParsing="false" onAction="#altaModificarPartido" text="Aceptar" />
+            <Button id="btnCancelar" fx:id="btnCancelar" layoutX="308.0" layoutY="315.0" mnemonicParsing="false" onAction="#btnCancelar" text="Cancelar" />
       </children>
     </AnchorPane>
   </children>
