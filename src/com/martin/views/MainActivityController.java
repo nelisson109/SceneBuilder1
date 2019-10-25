@@ -23,8 +23,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -91,31 +90,52 @@ public class MainActivityController implements Initializable {//un controller si
         FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Archivos de datos (*.dat)", "*.dat");
         fileChooser.getExtensionFilters().add(extFilter);
 
-        //Show save file dialog
+
         File file = fileChooser.showSaveDialog(stage);
 
         if (file != null) {
-            //Hacer lo que queramos con el archivo.
+            //guardar el archivo
             System.out.println(file.getAbsolutePath());
         }
     }
     @FXML
     void cargar(ActionEvent event){
         Stage stage = new Stage();
-        stage.setTitle("Carga Fichero");
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Carga Fichero");
+        //tipos de archivo
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Archivos de datos (*.dat)", "*.dat");
+        fileChooser.getExtensionFilters().add(extFilter);
 
-                FileChooser fileChooser = new FileChooser();
-                //Este paso es opcional, para dejar al usuario solo seleccionar ciertos tipos de archivo
-                FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Archivos de datos (*.dat)", "*.dat");
-                fileChooser.getExtensionFilters().add(extFilter);
+        File file = fileChooser.showOpenDialog(stage);
 
-                //Show save file dialog
-                File file = fileChooser.showOpenDialog(stage);
-
-                if (file != null) {
-                    //Hacer lo que queramos con el archivo.
-                    System.out.println(file.getAbsolutePath());
+        if (file != null) {
+            //cargar el archivo
+            FileReader fileReader = null;
+            BufferedReader bufferedReader = null;
+            String texto = "";
+            try{
+                fileReader = new FileReader(file);
+                bufferedReader = new BufferedReader(fileReader);
+                String st = bufferedReader.readLine();
+                while (st != null){
+                    texto = texto + st + "\n";
+                    st = bufferedReader.readLine();
                 }
+            }catch(FileNotFoundException e){
+                e.printStackTrace();
+            }catch(IOException e){
+                e.printStackTrace();
+            }finally {
+                try{
+                    if (fileReader!=null)
+                        fileReader.close();
+                }catch (IOException e){
+                    e.printStackTrace();
+                }
+            }
+
+        }
 
     }
 
@@ -136,13 +156,6 @@ public class MainActivityController implements Initializable {//un controller si
                 tvpartidos.setItems(filterDivision.filtrar(newValue));
             }
         });
-
- /*       cbFiltrar.itemsProperty().addListener(new ChangeListener<ObservableList<Division>>() {
-            @Override
-            public void changed(ObservableValue<? extends ObservableList<Division>> observableValue, ObservableList<Division> oldValue, ObservableList<Division> newValue) {
-                tvpartidos.setItems(filterDivision.filtrar(newValue));
-            }
-        });*/
 
     }
     @FXML
