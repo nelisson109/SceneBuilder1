@@ -88,7 +88,7 @@ public class MainActivityController implements Initializable {//un controller si
         stage.setTitle("Guardar cambios en el fichero");
         FileChooser fileChooser = new FileChooser();
         //Este paso es opcional, para dejar al usuario solo seleccionar ciertos tipos de archivo
-        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Archivos de texto (*.txt)", "*.txt");
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Archivos de datos (*.dat)", "*.dat");
         fileChooser.getExtensionFilters().add(extFilter);
 
         //Show save file dialog
@@ -106,7 +106,7 @@ public class MainActivityController implements Initializable {//un controller si
 
                 FileChooser fileChooser = new FileChooser();
                 //Este paso es opcional, para dejar al usuario solo seleccionar ciertos tipos de archivo
-                FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Archivos de texto (*.txt)", "*.txt");
+                FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Archivos de datos (*.dat)", "*.dat");
                 fileChooser.getExtensionFilters().add(extFilter);
 
                 //Show save file dialog
@@ -124,29 +124,30 @@ public class MainActivityController implements Initializable {//un controller si
         tvpartidos.setItems(Logica.getInstance().getPartidos());
         filterDivision = new FilterDivision(Logica.getInstance().getPartidos());
 
-        ObservableList<Division> categorias = FXCollections.observableArrayList();
+    /*    ObservableList<Division> categorias = FXCollections.observableArrayList();
         categorias.add(Division.PRIMERA);
         categorias.add(Division.SEGUNDA);
-        categorias.add(Division.TERCERA);
+        categorias.add(Division.TERCERA);*/
+
         cbFiltrar.setItems(FXCollections.observableArrayList(Division.values()));
-/*        cbFiltrar.valueProperty().addListener(new ChangeListener<Division>() {
+        cbFiltrar.valueProperty().addListener(new ChangeListener<Division>() {
             @Override
             public void changed(ObservableValue<? extends Division> observableValue, Division oldValue, Division newValue) {
                 tvpartidos.setItems(filterDivision.filtrar(newValue));
             }
-        });*/
+        });
 
-        cbFiltrar.itemsProperty().addListener(new ChangeListener<ObservableList<Division>>() {
+ /*       cbFiltrar.itemsProperty().addListener(new ChangeListener<ObservableList<Division>>() {
             @Override
             public void changed(ObservableValue<? extends ObservableList<Division>> observableValue, ObservableList<Division> oldValue, ObservableList<Division> newValue) {
                 tvpartidos.setItems(filterDivision.filtrar(newValue));
             }
-        });
+        });*/
 
     }
     @FXML
     private void filtrar(){
-        tvpartidos.setItems(filterDivision.filtrar(cbFiltrar.getItems()));
+        tvpartidos.setItems(filterDivision.filtrar(cbFiltrar.getValue()));
 
     }
 }

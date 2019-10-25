@@ -2,16 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dfc50e74-0105-47b4-8be8-005097889272" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/martin/views/res/balones.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/com/martin/logica/Logica.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/com/martin/logica/Logica.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/com/martin/Launcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/com/martin/Launcher.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/com/martin/views/MainActivityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/com/martin/views/MainActivityController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/com/martin/views/VentanaAlta.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/com/martin/views/VentanaAlta.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/com/martin/views/VentanaAltaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/com/martin/views/VentanaAltaController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/com/martin/views/mainActivity.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/com/martin/views/mainActivity.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/martin/logica/Logica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/martin/logica/Logica.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/martin/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/martin/Launcher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/martin/views/Filters/FilterDivision.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/martin/views/Filters/FilterDivision.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/martin/views/MainActivityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/martin/views/MainActivityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/martin/views/VentanaAlta.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/martin/views/VentanaAlta.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/martin/views/VentanaAltaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/martin/views/VentanaAltaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/martin/views/mainActivity.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/martin/views/mainActivity.fxml" afterDir="false" />
     </list>
@@ -49,6 +48,9 @@
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.martin.Utils" />
       <recent name="com.martin.views" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\DAM\Desktop\ProyectosDI_MartinLoza\SceneBuilder1\src\com\martin\views\res" />
     </key>
   </component>
   <component name="RunDashboard">

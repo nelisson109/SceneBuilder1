@@ -21,10 +21,10 @@ import java.time.ZoneId;
 import java.util.Date;
 import java.util.ResourceBundle;
 
-public class VentanaAltaController {
+public class VentanaAltaController implements Initializable {
 
         private Partido partidoModificar;
-        private ObservableList<Division> categorias = FXCollections.observableArrayList();
+    //    private ObservableList<Division> categorias = FXCollections.observableArrayList();
 
         @FXML
         private ComboBox<Division> cbDivision;
@@ -49,32 +49,28 @@ public class VentanaAltaController {
 
          @FXML
         void altaModificarPartido(ActionEvent event){//alta nueva o alta modificando
-        /*     ObservableList<Division> categorias = FXCollections.observableArrayList();
-             categorias.add(Division.PRIMERA);
-             categorias.add(Division.SEGUNDA);
-             categorias.add(Division.TERCERA);
-             cbDivision.setItems(FXCollections.observableArrayList(Division.values()));
-             cbDivision.getItems().setAll(Division.values());*/
-             categorias.add(Division.PRIMERA);
-             categorias.add(Division.SEGUNDA);
-             categorias.add(Division.TERCERA);
-             cbDivision.getItems().setAll(Division.values());
                  if (partidoModificar!=null) {//si estamos modificando
                      partidoModificar.setEquipoLocal(tfLocal.getText());
                      partidoModificar.setEquipoVisitante(tfVisitante.getText());
                      partidoModificar.setResultado(tfResultado.getText());
 
                      partidoModificar.setD((Division) cbDivision.getSelectionModel().getSelectedItem());
-                     LocalDate localDate = Utils.convertToLocalDate(partidoModificar.getFecha());
+                     Date date = Utils.convertToDate(dpFecha.getValue());
+                     partidoModificar.setFecha(date);
 
                      Logica.getInstance().modificarPartido(partidoModificar);
 
                  }
                  else{//si estamos haciendo un alta normal
+                     String equipoLocal, equipoVisitante, resultado;
+                     equipoLocal = tfLocal.getText();
+                     equipoVisitante = tfVisitante.getText();
+                     resultado = tfResultado.getText();
 
+                     Division division = (Division)cbDivision.getSelectionModel().getSelectedItem();
                      LocalDate localDate = (LocalDate) dpFecha.getValue();
                      Date date = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
-                     Partido partido = new Partido(tfLocal.getText(), tfVisitante.getText(), (Division)cbDivision.getSelectionModel().getSelectedItem(), tfResultado.getText(), date);
+                     Partido partido = new Partido(equipoLocal, equipoVisitante, division, resultado, date);
                      Logica.getInstance().addPartido(partido);
                  }
 
@@ -83,10 +79,6 @@ public class VentanaAltaController {
     }
     public void setPartidoModificar(Partido partidoModificar){//llamado por modificarPartido
                  this.partidoModificar = partidoModificar;
-        categorias.add(Division.PRIMERA);
-        categorias.add(Division.SEGUNDA);
-        categorias.add(Division.TERCERA);
-        cbDivision.getItems().setAll(Division.values());
                  tfLocal.setText(partidoModificar.getEquipoLocal());
                  tfVisitante.setText(partidoModificar.getEquipoVisitante());
                  cbDivision.setValue(partidoModificar.getD());
@@ -97,5 +89,11 @@ public class VentanaAltaController {
     public void btnCancelar(ActionEvent event){
         Stage stage = ((Stage) ((Node) event.getSource()).getScene().getWindow());//obtener stage desde evento
         stage.close();
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        cbDivision.getItems().setAll(Division.values());
+
     }
 }

@@ -12,7 +12,7 @@ public class Launcher extends Application {
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("views/mainActivity.fxml"));
         stage.setTitle("Pantalla Principal");
-        stage.setScene(new Scene(root, 500, 575));
+        stage.setScene(new Scene(root, 675, 575));
         stage.show();
 
     }

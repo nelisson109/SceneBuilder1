@@ -14,7 +14,7 @@ public class FilterDivision {
         listaFiltrada = FXCollections.observableArrayList();
 
     }
-    public ObservableList<Partido> filtrar(ObservableList<Division> divisionFiltrar){
+    public ObservableList<Partido> filtrar(Division divisionFiltrar){
         if(divisionFiltrar!=null && !"".equals(divisionFiltrar)){
             listaFiltrada.clear();
             for(Partido partido : partidos){
