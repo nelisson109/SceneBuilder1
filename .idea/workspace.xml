@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dfc50e74-0105-47b4-8be8-005097889272" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/controlsfx_11_0_0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unidad2javaFXejemplo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Unidad2javaFXejemplo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/com/martin/views/MainActivityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/com/martin/views/MainActivityController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/com/martin/views/VentanaAltaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/com/martin/views/VentanaAltaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Unidad2javaFXejemplo/module-info.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/martin/views/MainActivityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/martin/views/MainActivityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/martin/views/VentanaAltaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/martin/views/VentanaAltaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/module-info.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,7 +36,7 @@
   <component name="ProjectId" id="1SCGpiiBlzPzejCVgdiDtJvEZcQ" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../REPO_MARTIN" />
+    <property name="last_opened_file_path" value="$USER_HOME$/JAVA-MARTIN LOZA/controlsfx-11.0.0.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />

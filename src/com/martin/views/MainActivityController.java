@@ -112,28 +112,15 @@ public class MainActivityController implements Initializable {//un controller si
         if (file != null) {
             //cargar el archivo
             FileReader fileReader = null;
-            BufferedReader bufferedReader = null;
-            String texto = "";
-            try{
-                fileReader = new FileReader(file);
-                bufferedReader = new BufferedReader(fileReader);
-                String st = bufferedReader.readLine();
-                while (st != null){
-                    texto = texto + st + "\n";
-                    st = bufferedReader.readLine();
-                }
-            }catch(FileNotFoundException e){
-                e.printStackTrace();
-            }catch(IOException e){
-                e.printStackTrace();
-            }finally {
-                try{
-                    if (fileReader!=null)
-                        fileReader.close();
-                }catch (IOException e){
-                    e.printStackTrace();
-                }
+            ObjectInputStream lectura = null;
+            Partido partido = null;
+
+            fileReader = new FileReader(file);
+            lectura = new ObjectInputStream(fileReader);
+            while (file!=null){
+                partido = lectura.readObject();
             }
+
 
         }
 

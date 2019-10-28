@@ -3,6 +3,8 @@ import com.martin.Utils.Utils;
 import com.martin.logica.Logica;
 import com.martin.models.Division;
 import com.martin.models.Partido;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -14,6 +16,8 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import org.controlsfx.validation.ValidationSupport;
+import org.controlsfx.validation.Validator;
 
 import java.net.URL;
 import java.time.LocalDate;
@@ -93,6 +97,22 @@ public class VentanaAltaController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        ValidationSupport validationSupport = new ValidationSupport();
+        validationSupport.registerValidator(tfLocal, Validator.createEmptyValidator("El equipo local no puede estar vacío"));
+        validationSupport.registerValidator(tfVisitante, Validator.createEmptyValidator("El equipo visitante no puede estar vacio"));
+        validationSupport.registerValidator(tfResultado, Validator.createEmptyValidator("El resultado no puede estar vacío"));
+        validationSupport.registerValidator(cbDivision, Validator.createEmptyValidator("Debe seleccionar division"));
+        validationSupport.registerValidator(dpFecha, Validator.createEmptyValidator("Debe seleccionar fecha"));
+        //lo mismo con todos los campos
+
+        validationSupport.invalidProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observableValue, Boolean oldValue, Boolean newValue) {
+                btnAceptar.setDisable(newValue);
+            }
+        });
+        // btnAceptar.disableProperty().bind(validationSupport.invalidProperty());-->Esto seria lo mismo que lo anterior
+
         cbDivision.getItems().setAll(Division.values());
 
     }
