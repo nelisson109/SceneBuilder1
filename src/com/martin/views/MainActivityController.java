@@ -25,9 +25,10 @@ import javafx.stage.Stage;
 
 import java.io.*;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class MainActivityController implements Initializable {//un controller siempre implementa de Initializable
+public class MainActivityController implements Initializable, Serializable {//un controller siempre implementa de Initializable
     private FilterDivision filterDivision;
 
     @FXML
@@ -90,12 +91,37 @@ public class MainActivityController implements Initializable {//un controller si
         FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Archivos de datos (*.dat)", "*.dat");
         fileChooser.getExtensionFilters().add(extFilter);
 
-
         File file = fileChooser.showSaveDialog(stage);
+        ArrayList <Partido> listaGuarda = new ArrayList<Partido>();
+        FileOutputStream escribir = null;
+        ObjectOutputStream escritura = null;
+        try {
 
-        if (file != null) {
-            //guardar el archivo
-            System.out.println(file.getAbsolutePath());
+            for (int i = 0; i < Logica.getInstance().getPartidos().size(); i++) {
+                listaGuarda.add((Partido) Logica.getInstance().getPartidos().get(i));
+            }
+            if (file != null) {
+                escribir = new FileOutputStream(file);
+                escritura = new ObjectOutputStream(escribir);
+
+                escritura.writeObject(listaGuarda);
+
+            }
+        }catch (FileNotFoundException e){
+            e.printStackTrace();
+            System.out.println("Error, no se encuentra el fichero para escribir");
+        }catch(IOException e){
+            e.printStackTrace();
+            System.out.println("Error de entrada/salida");
+        }finally {
+            try {
+                if (escritura != null) {
+                    escritura.close();
+                }
+            }catch (IOException e){
+                e.printStackTrace();
+                System.out.println("Error de entrada/salida");
+            }
         }
     }
     @FXML
@@ -111,17 +137,37 @@ public class MainActivityController implements Initializable {//un controller si
 
         if (file != null) {
             //cargar el archivo
-            FileReader fileReader = null;
+            FileInputStream leer = null;
             ObjectInputStream lectura = null;
-            Partido partido = null;
+            try {
+                ArrayList<Partido> listaCarga = new ArrayList<Partido>();
+                leer = new FileInputStream(file);
+                lectura = new ObjectInputStream(leer);
 
-            fileReader = new FileReader(file);
-            lectura = new ObjectInputStream(fileReader);
-            while (file!=null){
-                partido = lectura.readObject();
+                    listaCarga = (ArrayList) lectura.readObject();
+
+                for (int i = 0; i < listaCarga.size(); i++) {
+                    Logica.getInstance().getPartidos().add(listaCarga.get(i));
+                }
+            }catch(FileNotFoundException e){
+                e.printStackTrace();
+                System.out.println("No se encuentra el fichero");
+            }catch(IOException e){
+                e.printStackTrace();
+                System.out.println("Error de entrada/salida");
+            }catch (ClassNotFoundException e){
+                e.printStackTrace();
+                System.out.println("No se encuentra la clase especificada");
+            }finally {
+                try{
+                    if (lectura!=null){
+                        lectura.close();
+                    }
+                }catch(IOException e){
+                    e.printStackTrace();
+                    System.out.println("Error de entrada/salida");
+                }
             }
-
-
         }
 
     }
